@@ -7,6 +7,7 @@ class Node:
         self.turtle = turtle.Turtle()
         self.turtle.hideturtle()
         self.turtle.speed('fastest')
+        self.turtle.pensize(10)
         self.steps = steps
         self.r = random.random()
         self.g = random.random()
