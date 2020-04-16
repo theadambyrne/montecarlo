@@ -15,15 +15,15 @@ class Node:
 
     def move(self, heading):
         self.turtle.setheading(heading)
-        self.turtle.forward(15)
+        self.turtle.forward(30)
 
     def randomWalk(self):
         directions = (east, north, west, south) = (0, 90, 180, 270)
         for i in range(self.steps):
             self.move(random.choice(directions))
 
-for i in range(5):
-    x = Node(50)
+for i in range(10):
+    x = Node(100)
     x.randomWalk()
 
 time.sleep(10)
