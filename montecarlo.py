@@ -2,17 +2,28 @@ import turtle
 import time
 import random
 
-turtle.hideturtle()
-turtle.speed('fastest')
+class Node:
+    def __init__(self, steps):
+        self.turtle = turtle.Turtle()
+        self.turtle.hideturtle()
+        self.turtle.speed('fastest')
+        self.steps = steps
+        self.r = random.random()
+        self.g = random.random()
+        self.b = random.random()
+        self.turtle.color(self.r,self.g,self.b)
 
-def move(heading, stepSize):
-    turtle.setheading(heading)
-    turtle.forward(stepSize)
+    def move(self, heading):
+        self.turtle.setheading(heading)
+        self.turtle.forward(15)
 
-def randomWalk(stepSize, steps):
-    directions = (east, north, west, south) = (0, 90, 180, 270)
-    for i in range(steps):
-        move(random.choice(directions), stepSize)
+    def randomWalk(self):
+        directions = (east, north, west, south) = (0, 90, 180, 270)
+        for i in range(self.steps):
+            self.move(random.choice(directions))
 
-for i in range(10):
-    randomWalk(15, 100)
+for i in range(5):
+    x = Node(50)
+    x.randomWalk()
+
+time.sleep(10)
